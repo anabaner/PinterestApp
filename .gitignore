@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+*.env
+.env
+
+# PyCharm / IDE
+.idea/
+*.iml
+
+# Byte-compiled / caches
+*.egg-info/
+dist/
+build/
+
+# Database and local stores
+*.db
+pinterest.db
+chroma_store/
+chroma.sqlite3
+
+# Uploaded media (do not commit uploaded pictures)
+static/uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
