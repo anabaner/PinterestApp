@@ -32,7 +32,7 @@ def add_pin_embedding(pin_id: int, title: str, description: str, tags: str):
     )
 
 
-def get_similar_pin_ids(pin_id: int, n: int = 3) -> list[int]:
+def get_similar_pin_ids(pin_id: int, n: int = 3,threshold: float = 0.75) -> list[int]:
     """Find the n most similar pins to a given pin."""
     results = collection.get(
         ids=[str(pin_id)],
@@ -56,7 +56,7 @@ def get_similar_pin_ids(pin_id: int, n: int = 3) -> list[int]:
     similar_ids = [
         int(id_)
         for id_, dist in zip(ids, distances)
-#        if int(id_) != pin_id and dist < threshold
+        if int(id_) != pin_id and dist < threshold
     ]
 
     return similar_ids[:n]
